@@ -1,0 +1,11 @@
+<div class="page-container">
+  <div class="modal">
+    <img class="welcome-flower" src="/element_images/Picture3.png" width="146" height="100" alt="Welcome!">
+    <span class="welcome"><b>FIND YOUR INVITATION</b></span>
+    <form class="login-form" [formGroup]="loginForm" (ngSubmit)="navigateToMain()">
+      <div class="input-wrapper"></div>
+      <input type="text" placeholder="enter full name here" id="name" formControlName="uniqueId" required (keyup.enter)="navigateToMain()" />
+      <button type="submit"><img class="next-img" width="10" height="15" src="/toppng.com-next-chevron-arrow-vector-icon-png-878x1456.png" alt=">" /></button>
+    </form>
+  </div>
+</div>

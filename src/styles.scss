@@ -1,1 +1,41 @@
-/* You can add global styles to this file, and also import other style files */
+
+@import url('https://fonts.googleapis.com/css2?family=Pinyon+Script&display=swap');
+
+body {
+  width: 100%;
+  height: 100vh;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #F8F0D4;
+
+  > *{
+    width: 100%;
+    height: 100%;
+  }
+}
+
+html {
+  overflow: hidden;
+}
+
+input[type="text"]{
+  padding: 5px;
+  border: 0;
+  margin-top: 15px;
+  background: transparent;
+  padding: 0 5px;
+  font-family: 'Pinyon Script', cursive;
+  font-size: 28px;
+  text-align: center;
+  width: 500px;
+}
+
+input:focus {
+  outline: none;
+}
+
+input::placeholder {
+  color: rgba(0,0,0,0.7);
+}

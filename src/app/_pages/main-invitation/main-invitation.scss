@@ -1,0 +1,23 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Pinyon+Script&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Piazzolla&display=swap');
+
+.page-container {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  height: 100%;
+}
+
+.user-name {
+  font-family: 'Pinyon Script', cursive;
+  font-size: 28px;
+  margin-top: 45vh;
+}
+
+.notice {
+  font-family: 'Piazzolla', serif;
+  font-size: 14px;
+  margin-top: 25%;
+  opacity: 0.5;
+}
