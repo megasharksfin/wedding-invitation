@@ -1,7 +1,45 @@
-<div class="page-container" (click)="toggleMenu()">
-  <span class="intro">You are invited to the celebration of love of</span>
-  <img src="/element_images/Group 5.png" class="wedding-names" alt="Celine & Gelo" />
-  <span class="notice">Press anywhere to continue.</span>
+<div class="page-container">
+  <div class="main-container" (pointerdown)="toggleMenu()">
+    @if (showElement) {
+      <span
+        class="intro"
+        (transitionend)="onIntroFadeEnd($event)"
+        [class.fade-in]="!menuOpened"
+        [class.fade-out]="menuOpened">You are invited to the celebration of love of</span>
+    }
+    <img src="/element_images/Group 5.png" class="wedding-names fade-in" [class.slide-up]="menuOpened" alt="Celine & Gelo" />
 
-  
+    <div class="menu-hidden" [class.main-menu]="showMenu" [class.fade-in]="showMenu">
+      <app-carousel></app-carousel>
+      
+      <!-- <div class="carousel">
+        <img class="carousel-image" src="/element_images/Celine + Gelo/DSC01835.jpg" alt="Image 1">
+      </div> -->
+
+      <div class="btn-container">
+        <button class="btn-bg our-story" type="button">
+          <span>Our Story</span>
+        </button>
+        <button class="btn-bg details" type="button">
+          <span>Details</span>
+        </button>
+        <button class="btn-bg faqs" type="button">
+          <span>FAQs</span>
+        </button>
+        <button class="btn-bg maps" type="button">
+          <span>Maps</span>
+        </button>
+        <button class="btn-bg rsvp" type="button">
+          <span>RSVP</span>
+        </button>
+      </div>
+    </div>
+    
+    @if (showElement) {
+      <span class="notice"
+      (transitionend)="onIntroFadeEnd($event)"
+      [class.fade-in]="!menuOpened"
+      [class.fade-out]="menuOpened">Press anywhere to continue.</span>
+    }
+  </div>
 </div>

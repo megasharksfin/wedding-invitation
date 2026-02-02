@@ -2,10 +2,29 @@
   <div class="modal">
     <img class="welcome-flower" src="/element_images/Picture3.png" width="146" height="100" alt="Welcome!">
     <span class="welcome"><b>FIND YOUR INVITATION</b></span>
-    <form class="login-form" [formGroup]="loginForm" (ngSubmit)="navigateToMain()">
+    <form class="login-form" [formGroup]="loginForm" (ngSubmit)="validateGuest()">
       <div class="input-wrapper"></div>
-      <input type="text" placeholder="enter full name here" id="name" formControlName="uniqueId" required (keyup.enter)="navigateToMain()" />
-      <button type="submit"><img class="next-img" width="10" height="15" src="/toppng.com-next-chevron-arrow-vector-icon-png-878x1456.png" alt=">" /></button>
+      <input type="text" placeholder="enter full name here" id="name" formControlName="uniqueId" required (keyup.enter)="validateGuest()" />
+      <div class="btn-container">
+        @if (!isSubmitted) {
+          <button type="submit">
+            <img class="next-img" width="10" height="15" src="/toppng.com-next-chevron-arrow-vector-icon-png-878x1456.png" alt=">" />
+          </button>
+        } @else {
+          <p class="validation">validating</p>
+        }
+      </div>
     </form>
   </div>
+
+  @if (isError()) {
+    <div class="show-overlay">
+      <div class="error-modal">
+        <span class="error-message">Sorry. The name you're trying to enter is not listed as part of this event.<br />Please try again with your full name.</span>
+        <button type="button" class="close-btn" (click)="isError.set(false)">
+          <img height="10" width="10" src="/element_images/Buttons/close-icon.png" alt="Close" />
+        </button>
+      </div>
+    </div>
+  }
 </div>

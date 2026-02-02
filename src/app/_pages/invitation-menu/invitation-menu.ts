@@ -1,24 +1,34 @@
+import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
+import { Carousel } from '../../_components'
 
 @Component({
   selector: 'app-invitation-menu',
-  imports: [],
+  imports: [CommonModule,Carousel],
   templateUrl: './invitation-menu.html',
-  styleUrl: './invitation-menu.scss'
+  styleUrl: './invitation-menu.scss',
 })
 export class InvitationMenu {
-  constructor() {}
+  constructor(
+  ) {
+  }
 
-  menuHidden: boolean = true;
+  menuOpened: boolean = false;
+  showElement: boolean  = true;
+  isClicked: boolean = false;
+  showMenu: boolean = false;
 
   toggleMenu() {
-    this.menuHidden = !this.menuHidden;
-    const weddingNames = document.querySelector('.wedding-names');
-    const introText = document.querySelector('.intro');
-    const noticeText = document.querySelector('.notice');
+    if (this.isClicked) return;
 
-    noticeText?.classList.add('fade-out');
-    weddingNames?.classList.add('slide-up');
-    introText?.classList.add('fade-out');
+    this.isClicked = true;
+    this.menuOpened = true;
+  }
+
+  onIntroFadeEnd(e: TransitionEvent) {
+    if (e.propertyName !== 'opacity') return;
+
+    this.showElement = false;
+    this.showMenu = true;
   }
 }

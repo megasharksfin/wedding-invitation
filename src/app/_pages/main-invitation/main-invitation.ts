@@ -8,14 +8,17 @@ import { ActivatedRoute, Router } from '@angular/router';
   styleUrl: './main-invitation.scss'
 })
 export class MainInvitation {
-  constructor(private route: ActivatedRoute, private router: Router) {
-    this.route.params.subscribe(params => {
-      const id = params['id'];
-      console.log('Unique ID:', id);
-    });
-  }
+  constructor(
+    private route: ActivatedRoute,
+    private router: Router,
+  ) { }
+
+  name: string = sessionStorage.getItem('guestName') || 'Guest';
 
   continue() {
-    this.router.navigate(['/main/1/menu'])
+    this.route.params.subscribe((params) => {
+      const id = params['id'];
+      this.router.navigate([`/main/${id}/menu`]);
+    });
   }
 }
