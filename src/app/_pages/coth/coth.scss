@@ -80,10 +80,14 @@
     max-height: 40vh;
   }
 
+  .location-img {
+    display: none;
+  }
+
   iframe {
     border: 0;
     margin-top: 5vh;
-    height: 50vh;
+    height: 70vh;
     width: 90vw;
   }
 

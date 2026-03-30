@@ -23,21 +23,20 @@ export class Login {
   isError = signal(false);
   
   validateGuest() {
-    const name = this.loginForm.get('uniqueId')?.value;
-    if (!name) {
+    const requestName = this.loginForm.get('uniqueId')?.value;
+    if (!requestName) {
       alert('Please input your name to continue.');
       return;
     }
 
     this.isSubmitted = true;
-    sessionStorage.setItem('guestName', name.trim());
     const data = {
-      name: name.trim(),
+      name: requestName.trim(),
       action: 'matchUser',
     }
     this.rsvpService.sheetsPost$(JSON.stringify(data)).subscribe({
       next: (res) => {
-        const { result, message, id } = res as any;
+        const { result, message, id, name } = res as any;
 
         if (result === 'error') {
           console.log(message);
@@ -47,6 +46,7 @@ export class Login {
           return;
         }
 
+        sessionStorage.setItem('guestName', name.trim());
         this.router.navigate([`/main/${id}`]);
       },
       error: (err) => {
