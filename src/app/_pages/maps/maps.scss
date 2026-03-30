@@ -31,6 +31,10 @@
   animation: fadeIn 1.5s ease-in forwards;
 }
 
+.title {
+  font-size: 48px;
+}
+
 @media (min-width: 968px) {
   .main-container {
     height: 90vh;
