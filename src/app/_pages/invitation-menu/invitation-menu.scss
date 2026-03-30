@@ -98,7 +98,7 @@
 
   .wedding-names {
     width: min(80vw, 420px); /* responsive */
-    top: 40%;
+    top: 35%;
   }
 
   .notice {
@@ -118,12 +118,12 @@
     flex-direction: column;
     justify-content: flex-start;
     align-items: center;
-    margin-top: 25vh;
+    margin-top: 20vh;
   }
 
   .btn-container {
     position: absolute;
-    bottom: 5vh;
+    bottom: 10vh;
     display: flex;
     flex-direction: row;
     justify-content: center;
