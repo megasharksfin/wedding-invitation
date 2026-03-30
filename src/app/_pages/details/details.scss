@@ -100,7 +100,7 @@
 
   .celine-gelo {
     width: min(80vw, 420px);
-    margin: 10  vh 0 0;
+    margin: 7vh 0 0;
   }
 
   .gif {
@@ -117,13 +117,14 @@
     align-items: center;
     margin: 5vh 0 0;
 
-    > * {
+    > *:not(:last-child) {
       margin-bottom: 4vh;
     }
   }
 
   .notice {
-    margin: 5vw 0;
+    position: absolute;
+    bottom: 28vh;
   }
 
   .home {
@@ -136,14 +137,15 @@
   .back {
     position: absolute;
     top: 10px;
-    left: 15vw;
+    left: 17vw;
     z-index: 100;
   }
 
   .attire-guide {
+    width: 100vw;
     display: flex;
     flex-direction: column;
-    justify-content: flex-start;
+    justify-content: center;
     align-items: stretch;
   }
 
@@ -151,7 +153,7 @@
     display: flex;
     justify-content: space-evenly;
     align-items: center;
-    margin-top: 85vh;
+    margin-top: 80vh;
   }
 
   .attire-guide-img {
@@ -159,7 +161,11 @@
     position: absolute;
     top: 0;
     left: 0;
+  }
 
+  .guide-notice {
+    width: 90vw;
+    background-color: #F8EECA;
   }
 }
 
@@ -258,6 +264,7 @@ a {
   align-items: center;
   min-width: 170px;
   background-color: #E8C6A8;
+  z-index: 50;
 
   > img {
     max-height: 25px;
@@ -271,9 +278,10 @@ a {
 .guide-notice {
   text-align: center;
   font-size: 14px;
-  align-self: stretch;
+  align-self: center;
   margin-top: 10px;
   font-family: 'Preahvihear', serif;
+  z-index: 50;
 }
 
 .icon-btn {
@@ -284,5 +292,5 @@ a {
   margin: 0;
   padding: 10px;
   border-radius: 50%;
-  background-color: #F8EECA;
+  background-color: transparent;
 }

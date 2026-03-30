@@ -102,6 +102,11 @@
     opacity: 0.5;
     background-color: #D9D9D9;
 
+    > img {
+      height: 24px;
+      width: 24px;
+    }
+
     :hover{
       cursor: pointer;
     }
