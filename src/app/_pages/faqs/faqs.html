@@ -1,0 +1,27 @@
+<div class="page-container">
+  <div class="main-container">
+    <button class="home fade-in" type="button" (click)="navigate()">
+      <img src="/element_images/Buttons/home.png" alt="home" />
+    </button>
+
+    <img class="celine-gelo" src="/element_images/Group 5.png" alt="Celine Gelo" />
+    
+    <span class="fade-in title">FAQs</span>
+    <div class="fade-in accordion" ngbAccordion>
+      @for (item of accordionList; track item.question) {
+        <div ngbAccordionItem>
+          <h3 ngbAccordionHeader>
+            <button type="button" ngbAccordionButton>
+              {{ item.question }}
+            </button>
+          </h3>
+          <div ngbAccordionCollapse>
+            <div ngbAccordionBody class="answer">
+              <ng-template>{{ item.answer }}</ng-template>
+            </div>
+          </div>
+        </div>
+      }
+    </div>
+  </div>
+</div>

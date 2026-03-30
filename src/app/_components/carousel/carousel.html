@@ -1,3 +1,12 @@
-<div class="container">
-  
+<div class="component-container">
+  <ngb-carousel
+    [interval]="3000">
+    @for(slide of slides; track slide) {
+      <ng-template ngbSlide>
+        <div class="img-wrapper">
+          <img [src]="slide" alt="{{slide}}">
+        </div>
+      </ng-template>
+    }
+  </ngb-carousel>
 </div>

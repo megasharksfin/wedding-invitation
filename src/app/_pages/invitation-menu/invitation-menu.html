@@ -7,30 +7,38 @@
         [class.fade-in]="!menuOpened"
         [class.fade-out]="menuOpened">You are invited to the celebration of love of</span>
     }
-    <img src="/element_images/Group 5.png" class="wedding-names fade-in" [class.slide-up]="menuOpened" alt="Celine & Gelo" />
+    <img
+      src="/element_images/Group 5.png"
+      class="wedding-names fade-in"
+      [class.fade-out]="optionSelected"
+      [class.slide-up]="menuOpened"
+      alt="Celine & Gelo" />
 
-    <div class="menu-hidden" [class.main-menu]="showMenu" [class.fade-in]="showMenu">
+    <div class="menu-hidden" [class.main-menu]="showMenu">
       <app-carousel></app-carousel>
-      
-      <!-- <div class="carousel">
-        <img class="carousel-image" src="/element_images/Celine + Gelo/DSC01835.jpg" alt="Image 1">
-      </div> -->
+
+      <!-- <app-our-story [class.fade-in-option]="optionSelected && selected == 'our-story'"></app-our-story> -->
 
       <div class="btn-container">
-        <button class="btn-bg our-story" type="button">
+        <button class="btn-bg" type="button" (click)="navigate('our-story')">
+          <img src="/element_images/Buttons/Our Story1.png" alt="Our Story">
           <span>Our Story</span>
         </button>
-        <button class="btn-bg details" type="button">
+        <button class="btn-bg" type="button" (click)="navigate('details')">
+          <img class="details" src="/element_images/Buttons/Details.png" alt="Details">
           <span>Details</span>
         </button>
-        <button class="btn-bg faqs" type="button">
+        <button class="btn-bg" type="button">
+          <img class="rsvp" src="/element_images/Buttons/RSVP1.png" alt="RSVP">
+          <span>RSVP</span>
+        </button>
+        <button class="btn-bg" type="button" (click)="navigate('faqs')">
+          <img src="/element_images/Buttons/FAQs.png" alt="FAQs">
           <span>FAQs</span>
         </button>
-        <button class="btn-bg maps" type="button">
+        <button class="btn-bg" type="button" (click)="navigate('maps')">
+          <img class="maps" src="/element_images/Buttons/Maps.png" alt="Maps">
           <span>Maps</span>
-        </button>
-        <button class="btn-bg rsvp" type="button">
-          <span>RSVP</span>
         </button>
       </div>
     </div>

@@ -1,27 +1,73 @@
-.container {
-  height: 100%;
-  max-width: 100%;
+.component-container {
+  height: 420px;
+  max-height: 700px;
+  max-width: 500px;
+  margin: 0 auto;
   display: flex;
   align-items: center;
-  justify-content: flex-start;
-  min-width: 0;
+  justify-content: center;
+  position: relative;
+  padding: 58px;
+  box-sizing: border-box;
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: -15px;
+    left: 20px;
+    right: 0px;
+    bottom: -30px;
+    background: url('/element_images/Buttons/Polaroid.png') center / contain no-repeat;
+    pointer-events: none;
+    z-index: 10;
+  }
+
+  ngb-carousel {
+    position: relative;
+    z-index: 5;
+  }
 }
 
-swiper-container {
-  display: block;
-  width: 100%;
-  height: 400px;
+@media (min-width: 968px) {
+  ngb-carousel {
+    width: 300px;
+  }
+
+  img {
+    max-height: 400px;
+  }
+
+  .component-container {
+    width: 100%;
+  }
 }
 
-swiper-slide {
+@media (max-width: 968px) {
+  ngb-carousel {
+    width: 300px;
+  }
+
+  img {
+    max-height: 300px;
+  }
+
+  .component-container {
+    width: 70%;
+  }
+}
+
+.img-wrapper {
   display: flex;
   justify-content: center;
   align-items: center;
+  overflow: hidden;
+  max-width: 100%;
+  width: 100%;
+  height: 100%;
 }
 
-swiper-slide > img {
-  width: 100%;
-  max-width: 300px;
-  height: auto;
+img {
+  width: 300px;
   object-fit: contain;
+  display: block;
 }

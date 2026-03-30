@@ -1,0 +1,101 @@
+<div class="page-container">
+  <div class="main-container">
+    <button class="icon-btn home fade-in" type="button" (click)="navigate()">
+      <img src="/element_images/Buttons/home.png" alt="home" />
+    </button>
+    
+    <button class="prev fade-in" type="button" [disabled]="currentStep === 1">
+      <img src="/element_images/Buttons/left-arrow-standard.png" alt="prev" />
+    </button>
+    <button class="next fade-in" type="button" [disabled]="currentStep === 17">
+      <img src="/element_images/Buttons/right-arrow-standard.png" alt="next" />
+    </button>
+    
+    <div [class.step1]="currentStep === 1" class="story-container">
+      <img src="/element_images/Group 5.png" alt="Celine & Gelo" class="celine-gelo" />
+      <span class="fade-in title">Our Story</span>
+      <span class="fade-in disclaimer">If you're on mobile, rotate your phone for a better experience.</span>
+    </div>
+
+    <div [class.step2]="currentStep === 2" class="story-container">
+      <span class="story-text">The Beginning of Us:</span>
+      <span class="story-text indented"> Our story didn't start with a spark, but with a friendship</span>
+    </div>
+
+    <div [class.step3]="currentStep === 3" class="story-container">
+      <span class="story-text">Celine entered the world in late 1998,</span>
+      <img class="story-image" src="/element_images/Our Story/baby-images.png" alt="baby-images" />
+    </div>
+
+    <div [class.step4]="currentStep === 4" class="story-container">
+      <span class="story-text">Little did we know, our paths were already converging.</span>
+    </div>
+
+    <div [class.step5]="currentStep === 5" class="story-container">
+      <span class="story-text">From Classmates to Confidants:</span>
+      <span class="story-text indented">In 2012, we met as high school classmates.</span>
+    </div>
+
+    <div [class.step6]="currentStep === 6" class="story-container">
+      <img src="/element_images/Our Story/class-pic.png" alt="Class Picture" />
+    </div>
+
+    <div [class.step7]="currentStep === 7" class="story-container">
+      <img src="/element_images/Our Story/class-pic-blurred.png" alt="Class Picture Blurred" />
+    </div>
+
+    <div [class.step8]="currentStep === 8" class="story-container">
+      <span class="story-text">Between shared lessons and teenage dreams,</span>
+      <div class="img-container">
+        <img src="/element_images/Our Story/gelo-seniors-night.png" alt="Gelo Senior's Night" />
+        <img src="/element_images/Our Story/ikki-seniors-night.png" alt="Ikki Senior's Night" />
+      </div>
+    </div>
+
+    <div [class.step9]="currentStep === 9" class="story-container">
+      <span class="story-text">Between shared lessons and teenage dreams,</span>
+      <div class="img-container">
+        <img src="/element_images/Our Story/ikki-grad-pic-hs.png" alt="Gelo Senior's Night" />
+        <img src="/element_images/Our Story/ikki-seniors-night.png" alt="Ikki Senior's Night" />
+      </div>
+    </div>
+
+    <div [class.step10]="currentStep === 10" class="story-container">
+      <span class="story-text">Between shared lessons and teenage dreams,</span>
+      <div class="img-container">
+        <img src="/element_images/Our Story/ikki-grad-pic-college.png" alt="Gelo Senior's Night" />
+        <img src="/element_images/Our Story/gelo-grad-pic-college.png" alt="Ikki Senior's Night" />
+      </div>
+    </div>
+
+    <div [class.step11]="currentStep === 11" class="story-container">
+      <span class="story-text">we built a foundation of<br />friendship that refused to fade.</span>
+      <img src="/element_images/Our Story/ikki-gelo-prom.png" alt="Ikki Gelo Prom" />
+    </div>
+
+    <div [class.step12]="currentStep === 12" class="story-container">
+      <span class="story-text">The Greatest Adventure:</span>
+      <span class="story-text">In 2022, we realized that the person we had been looking<br />for was the one who had been there all along.</span>
+    </div>
+
+    <div [class.step13]="currentStep === 13" class="story-container">
+      <span class="story-text">We traded "best friends" for "forever,"</span>
+    </div>
+
+    <div [class.step14]="currentStep === 14" class="story-container">
+      <img src="/element_images/Our Story/ikki-gelo-travels.png" alt="Ikki Gelo Travels" />
+    </div>
+
+    <div [class.step15]="currentStep === 15" class="story-container">
+      <span class="story-text">and in September 2025, Gelo asked the big question.</span>
+    </div>
+    
+    <div [class.step16]="currentStep === 16" class="story-container">
+      <img src="/element_images/Our Story/ikki-gelo-proposal.png" alt="Ikki Gelo Proposal" />
+    </div>
+
+    <div [class.step17]="currentStep === 17" class="story-container">
+      <span class="story-container">Now, we can't wait to start our next chapter with you.</span>
+    </div>
+  </div>
+</div>

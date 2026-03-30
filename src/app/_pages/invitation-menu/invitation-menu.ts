@@ -1,6 +1,7 @@
 import { CommonModule } from '@angular/common';
-import { Component } from '@angular/core';
-import { Carousel } from '../../_components'
+import { Component, OnInit } from '@angular/core';
+import { Carousel, OurStory } from '../../_components'
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-invitation-menu',
@@ -8,8 +9,10 @@ import { Carousel } from '../../_components'
   templateUrl: './invitation-menu.html',
   styleUrl: './invitation-menu.scss',
 })
-export class InvitationMenu {
+export class InvitationMenu implements OnInit {
   constructor(
+    private router: Router,
+    private route: ActivatedRoute,
   ) {
   }
 
@@ -17,12 +20,29 @@ export class InvitationMenu {
   showElement: boolean  = true;
   isClicked: boolean = false;
   showMenu: boolean = false;
+  optionSelected: boolean = false;
+  selected: string = '';
+
+  ngOnInit(): void {
+    const sessionMenu = sessionStorage.getItem('menuOpened');
+
+    if (!sessionMenu)
+      return;
+  
+    this.isClicked = true;
+    this.menuOpened = true;
+    this.showElement = false;
+    this.showMenu = true;
+  }
 
   toggleMenu() {
     if (this.isClicked) return;
 
     this.isClicked = true;
     this.menuOpened = true;
+    this.showElement = false;
+    this.showMenu = true;
+    sessionStorage.setItem('menuOpened', 'true');
   }
 
   onIntroFadeEnd(e: TransitionEvent) {
@@ -30,5 +50,26 @@ export class InvitationMenu {
 
     this.showElement = false;
     this.showMenu = true;
+  }
+
+  navigate(dest: string) {
+    if (!dest) {
+      return;
+    }
+
+    switch (dest) {
+      case 'our-story':
+        this.router.navigate(['./our-story'], { relativeTo:  this.route });
+        break;
+      case 'details':
+        this.router.navigate(['./details'], { relativeTo: this.route });
+        break;
+      case 'maps':
+        this.router.navigate(['./maps'], { relativeTo: this.route });
+        break;
+      case 'faqs':
+        this.router.navigate(['./faqs'], { relativeTo: this.route });
+        break;
+    }
   }
 }

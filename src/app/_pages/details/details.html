@@ -1,0 +1,52 @@
+<div class="page-container">
+  <div class="main-container" (click)="toggleDisplay()">
+    <button class="icon-btn home" type="button" (click)="navigate()">
+      <img src="/element_images/Buttons/home.png" alt="home" />
+    </button>
+    @if (!nextPage) {
+      <img class="celine-gelo fade-in" src="/element_images/Group 5.png" alt="Celine & Gelo">
+
+      <div class="details-container fade-in">
+        <span class="detail">September 21, 2026<br />Monday</span>
+        <div class="detail-container">
+          <span class="detail">Don Bosco <br />Chapel on the Hill</span>
+          <span class="small-detail">Ceremony starts at 2pm</span>
+        </div>
+        <span class="detail">Marcia Adams Restaurant</span>
+        <div class="detail-container">
+          <span class="detail">Semi-Formal Attire</span>
+          <div class="colors">
+            <div class="color color1"></div>
+            <div class="color color2"></div>
+            <div class="color color3"></div>
+            <div class="color color4"></div>
+          </div>
+        </div>
+      </div>
+
+      <span class="small-detail notice fade-in">Press anywhere to continue.</span>
+    } @else {
+      <button class="icon-btn back fade-in" type="button" (click)="back()">
+        <img src="/element_images/Buttons/left-arrow-standard.png" alt="back" />
+      </button>
+      <div class="attire-guide fade-in">
+        <div class="button-guides">
+          <a href="https://pin.it/52d7AUX1z" rel="noopener" target="_blank" class="guide-btn" type="button">
+            <img src="element_images/Buttons/pinterest-round-icon 1.png" alt="Pinterest Icon" />
+            <span>Outfit Ideas for Women</span>
+          </a>
+          <a href="https://pin.it/1R0Qj3bHa" rel="noopener" target="_blank" class="guide-btn" type="button">
+            <img src="element_images/Buttons/pinterest-round-icon 1.png" alt="Pinterest Icon" />
+            <span>Outfit Ideas for Men</span>
+          </a>
+          <img class="attire-guide-img" [src]="attireImage" alt="Attire Guide">
+        </div>
+        <span class="guide-notice">Attire guide is not mandatory, but we would appreciate it if you dress as close as possible.</span>
+      </div>
+    }
+
+    @if (!nextPage) {
+      <img class="gif fade-in" src="element_images/Details_Speed_Paint.gif" alt="Chapel on the HIll" />
+    }
+  </div>
+</div>

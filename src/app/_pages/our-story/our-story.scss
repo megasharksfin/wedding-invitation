@@ -1,0 +1,135 @@
+@import url('https://fonts.googleapis.com/css2?family=Preahvihear&display=swap');
+
+@keyframes fadeIn {
+ from {
+  opacity: 0;
+ }
+ to {
+  opacity: 1;
+ }
+}
+
+.fade-in {
+  animation: fadeIn 1.5s ease-in forwards;
+}
+
+.page-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  font-family: 'Piazzolla', serif;
+  touch-action: manipulation;
+  position: relative;
+  min-height: 100vh;
+  background-color: #AFAFAF;
+}
+
+.main-container {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  background-color: #F8EECA;
+}
+
+.icon-btn {
+  box-shadow:
+    0 4px 4px rgba(0, 0, 0, 0.55),
+    inset 0 0 0 1px rgba(255, 255, 255, 0.04);
+  border: 0;
+  margin: 0;
+  padding: 10px;
+  background-color: transparent;
+  border-radius: 50%;
+  
+  > img {
+    height: 24px;
+    width: 24px;
+  }
+}
+
+.prev, .next {
+  top: 50%;
+  z-index: 100;
+  position: absolute;
+  padding: 0;
+  border: 0;
+  background-color: transparent;
+}
+
+.prev:disabled, .next:disabled {
+  opacity: 0.2;
+}
+
+.story-container {
+  display: none;
+}
+
+.step1 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  > .title {
+    margin-top: 6vh;
+    font-size: 48px;
+    font-family: 'Perpetua Titling MT', serif;
+  }
+
+  > .disclaimer {
+    font-family: 'Preahvihear', serif;
+    font-size: 12px;
+    position: absolute;
+    bottom: 8vh;
+  }
+}
+
+@media (min-width: 900px) {
+  .main-container {
+    height: 90vh;
+    width: 90vw;
+    box-shadow:
+      0 8px 24px rgba(0, 0, 0, 0.55),
+      inset 0 0 0 1px rgba(255, 255, 255, 0.04);
+  }
+
+  .home {
+    position: absolute;
+    top: 6vh;
+    left: 5.5vw;
+    z-index: 100;
+  }
+
+  .prev {
+    left: 7vw;
+  }
+
+  .next {
+    right: 7vw;
+  }
+
+  .celine-gelo {
+    max-width: 80%;
+    margin-top: 13.4vh;
+  }
+}
+
+@media (max-width: 900px) {
+  .main-container {
+    width: 100vw;
+    height: 100vh;
+  }
+  
+  .home {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    z-index: 100;
+  }
+
+  .celine-gelo {
+    width: min(80vw, 420px);
+    margin-top: 19.2vh;
+  }
+}
