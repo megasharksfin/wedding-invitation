@@ -35,9 +35,9 @@ export class Details implements OnInit {
   }
 
   getDimensions() {
-    this.attireImage = window.innerWidth > 968
-      ? 'element_images/Buttons/Attire Guide Desktop.png'
-      : 'element_images/Buttons/Attire Guide Mobile.png';
+    this.attireImage = window.innerWidth <= 968
+      ? 'https://res.cloudinary.com/dlk5shsgs/image/upload/v1774875645/Attire_Guide_Mobile_gbnnrp.png'
+      : 'https://res.cloudinary.com/dlk5shsgs/image/upload/v1774875645/Attire_Guide_Desktop_gwcl5m.png';
   }
 
   back(): void {
