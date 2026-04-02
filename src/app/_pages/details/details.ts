@@ -41,6 +41,9 @@ export class Details implements OnInit {
   }
 
   back(): void {
-    location.reload();
+    const currentUrl = this.router.url;
+    this.router.navigateByUrl('/', { skipLocationChange: true }).then(() => {
+      this.router.navigate([currentUrl]);
+    });
   }
 }

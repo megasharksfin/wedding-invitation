@@ -40,19 +40,18 @@
     flex-direction: row;
     justify-content: space-between;
   }
-  
-  .home {
+
+  .navigation-buttons {
     position: absolute;
     top: 6vh;
     left: 5.5vw;
-    z-index: 100;
-  }
+    z-index: 50;
+    display: flex;
+    align-items: center;
 
-  .back {
-    position: absolute;
-    top: 6vh;
-    left: 8.5vw;
-    z-index: 100;
+    > :first-child {
+      margin-right: 1vw;
+    }
   }
 
   iframe {
@@ -91,18 +90,17 @@
     width: 90vw;
   }
 
-  .home {
+  .navigation-buttons {
     position: absolute;
     top: 10px;
     left: 10px;
-    z-index: 100;
-  }
+    z-index: 50;
+    display: flex;
+    align-items: center;
 
-  .back {
-    position: absolute;
-    top: 10px;
-    left: 15vw;
-    z-index: 100;
+    > :first-child {
+      margin-right: 3vw;
+    }
   }
 }
 

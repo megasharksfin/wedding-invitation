@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Petit+Formal+Script&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Preahvihear&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Piazzolla&display=swap');
 
 @keyframes fadeIn {
   from {
@@ -46,21 +47,25 @@
   }
 
   .notice {
-    margin: 3vw 0;
+    position: absolute;
+    bottom: 5vh;
+    background-color: #F8EECA;
+    height: 4vh;
+    z-index: 50;
+    font-family: 'Piazzolla', serif;
   }
-  
-  .home {
+
+  .navigation-buttons {
     position: absolute;
     top: 6vh;
     left: 5.5vw;
-    z-index: 100;
-  }
+    z-index: 50;
+    display: flex;
+    align-items: center;
 
-  .back {
-    position: absolute;
-    top: 6vh;
-    left: 8.5vw;
-    z-index: 100;
+    > :first-child {
+      margin-right: 1vw;
+    }
   }
 
   .attire-guide {
@@ -127,18 +132,17 @@
     bottom: 28vh;
   }
 
-  .home {
+  .navigation-buttons {
     position: absolute;
     top: 10px;
     left: 10px;
     z-index: 100;
-  }
+    display: flex;
+    align-items: center;
 
-  .back {
-    position: absolute;
-    top: 10px;
-    left: 17vw;
-    z-index: 100;
+    > :first-child {
+      margin-right: 3vw;
+    }
   }
 
   .attire-guide {
@@ -196,7 +200,7 @@
   justify-content: center;
 }
 
-.detail, .small-detail {
+.detail {
   font-family: 'Petit Formal Script', cursive;
 }
 

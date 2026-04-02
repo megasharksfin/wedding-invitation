@@ -13,7 +13,7 @@
 @media (min-width: 968px) {
   .intro {
     font-size: 24px;
-    margin: 27vh 0 5px;
+    margin: 20vh 0 5px;
     opacity: 1;
     transition: opacity 1s ease;
   }
@@ -26,7 +26,8 @@
   .notice {
     font-family: 'Piazzolla', serif;
     font-size: 14px;
-    margin-top: 45vh;
+    position: absolute;
+    bottom: 7vh;
     opacity: 0.5;
     transition: opacity 1s ease;
   }
@@ -43,7 +44,7 @@
     flex-direction: row;
     align-items: center;
     justify-content: center;
-    margin-top: 30vh;
+    margin-top: 28vh;
   }
 
   .btn-container {
@@ -64,7 +65,7 @@
     display: flex;
     align-items: center;
     justify-content: flex-start;
-    min-height: 70px;
+    height: 70px;
 
     img {
       max-height: 70px;
@@ -171,7 +172,7 @@
 }
 
 .wedding-names.slide-up {
-  transform: translate(-50%, calc(-50% - 18vh));
+  transform: translate(-50%, calc(-50% - 22vh));
 }
 
 .fade-out {
@@ -253,6 +254,10 @@
 
 .carousel-image {
   height: 100%;
+}
+
+.notice {
+  color: rgba(0,0,0,0.5);
 }
 
 /* app-carousel, .btn-container {

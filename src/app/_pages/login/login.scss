@@ -20,14 +20,8 @@
     margin: 35vh 0;
   }
 
-  .input-wrapper{
-    width: 510px;
+  input[type="text"] {
     background-color: #eee;
-    height: 28px;
-    position: absolute;
-    top: 45.5vh;
-    margin-bottom: -5px;
-    z-index: -1;
   }
 
   button{

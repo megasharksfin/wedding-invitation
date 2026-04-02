@@ -47,12 +47,6 @@
   border-radius: 50%;
 }
 
-.title {
-  margin-top: 1vh;
-  font-size: 48px;
-  font-family: 'Perpetua Titling MT', serif;
-}
-
 .accordion-item {
   background-color: #FEE4CD !important;
 }
@@ -77,6 +71,13 @@
     max-width: 960px;
     margin-top: 11.4vh;
   }
+
+  .title {
+    margin-top: 1vh;
+    font-size: 48px;
+    font-family: 'Perpetua Titling MT', serif;
+    text-align: center;
+  }
 }
 
 @media (max-width: 968px) {
@@ -95,6 +96,13 @@
   .celine-gelo {
     width: min(80vw, 420px);
     margin-top: 17.2vh;
+  }
+
+  .title {
+    margin-top: 1vh;
+    font-size: 24px;
+    font-family: 'Perpetua Titling MT', serif;
+    text-align: center;
   }
 }
 

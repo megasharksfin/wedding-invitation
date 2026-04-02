@@ -22,7 +22,8 @@
   .notice {
     font-family: 'Piazzolla', serif;
     font-size: 14px;
-    margin-top: 40vh;
+    position: absolute;
+    bottom: 7vh;
     opacity: 0.5;
     animation: fadeIn 1.5s ease-in forwards;
   }
@@ -72,4 +73,8 @@
   align-items: center;
   flex-direction: column;
   background-color: #F8EECA;
+}
+
+.notice {
+  color: rgba(0,0,0,0.5);
 }

@@ -1,8 +1,16 @@
 <div class="page-container">
   <div class="main-container" (click)="toggleDisplay()">
-    <button class="icon-btn home" type="button" (click)="navigate()">
-      <img src="https://res.cloudinary.com/dlk5shsgs/image/upload/v1774875649/home_lqdqps.svg" alt="home" />
-    </button>
+    <div class="navigation-buttons fade-in">
+      <button class="icon-btn home" type="button" (click)="navigate()">
+        <img src="https://res.cloudinary.com/dlk5shsgs/image/upload/v1774875649/home_lqdqps.svg" alt="home" />
+      </button>
+
+      @if (nextPage) {
+        <button class="icon-btn back fade-in" type="button" (click)="back()">
+          <img src="https://res.cloudinary.com/dlk5shsgs/image/upload/v1774875649/left-arrow-standard_gcferr.png" alt="back" />
+        </button>
+      }
+    </div>
     @if (!nextPage) {
       <img class="celine-gelo fade-in" src="https://res.cloudinary.com/dlk5shsgs/image/upload/v1774874860/Group_5_ok3eol.png" alt="Celine & Gelo">
 
@@ -26,9 +34,6 @@
 
       <span class="small-detail notice fade-in">Press anywhere to continue.</span>
     } @else {
-      <button class="icon-btn back fade-in" type="button" (click)="back()">
-        <img src="https://res.cloudinary.com/dlk5shsgs/image/upload/v1774875649/left-arrow-standard_gcferr.png" alt="back" />
-      </button>
       <div class="attire-guide fade-in">
         <div class="button-guides">
           <a href="https://pin.it/52d7AUX1z" rel="noopener" target="_blank" class="guide-btn" type="button">
