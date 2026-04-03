@@ -145,8 +145,10 @@
   }
 
   > .gelo {
-    top: 80vh;
+    position: absolute;
+    bottom: 5vh;
     left: 55vw;
+    font-size: 2.5vw;
   }
 }
 
