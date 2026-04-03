@@ -4,47 +4,71 @@
       <img src="https://res.cloudinary.com/dlk5shsgs/image/upload/v1774875648/home_an6s7l.png" alt="home" />
     </button>
     
-    <button class="prev fade-in" type="button" [disabled]="currentStep === 1">
+    <button
+      class="prev fade-in"
+      type="button"
+      (click)="turnPage(-1)"
+      [class.is-hidden]="currentStep === 1">
       <img src="https://res.cloudinary.com/dlk5shsgs/image/upload/v1774875649/left-arrow-standard_gcferr.png" alt="prev" />
     </button>
-    <button class="next fade-in" type="button" [disabled]="currentStep === 17">
+    <button 
+      class="next fade-in"
+      type="button"
+      (click)="turnPage(1)"
+      [class.is-hidden]="currentStep === 16">
       <img src="https://res.cloudinary.com/dlk5shsgs/image/upload/v1774875639/right-arrow-standard_i8ezrg.png" alt="next" />
     </button>
     
-    <div [class.step1]="currentStep === 1" class="story-container">
+    <div
+      [class.step1]="currentStep === 1"
+      class="story-container">
       <img src="https://res.cloudinary.com/dlk5shsgs/image/upload/v1774874860/Group_5_ok3eol.png" alt="Celine & Gelo" class="celine-gelo" />
       <span class="fade-in title">Our Story</span>
       <span class="fade-in disclaimer">If you're on mobile, rotate your phone for a better experience.</span>
     </div>
 
-    <div [class.step2]="currentStep === 2" class="story-container">
+    <div
+      [class.step2]="currentStep === 2"
+      class="story-container fade-in">
       <span class="story-text">The Beginning of Us:</span>
-      <span class="story-text indented"> Our story didn't start with a spark, but with a friendship</span>
+      <span class="story-text indented"> Celine and  Gelo's story didn't start with a spark,<br />but with a friendship.</span>
     </div>
 
-    <div [class.step3]="currentStep === 3" class="story-container">
+    <div [class.step3]="currentStep === 3" class="story-container fade-in">
       <span class="story-text">Celine entered the world in late 1998,</span>
-      <img class="story-image" src="/element_images/Our Story/baby-images.png" alt="baby-images" />
+
+      <img src="https://res.cloudinary.com/dlk5shsgs/image/upload/v1775172481/baby-pics-1_wiogd7.png" alt="image1" class="story-image image1 fade-in">
+      @if (visibleImages()[1]) {
+        <img src="https://res.cloudinary.com/dlk5shsgs/image/upload/v1775172481/baby-pics-2_njwv3w.png" alt="image2" class="story-image image2 fade-in">
+      }
+      @if (visibleImages()[2]) {
+        <img src="https://res.cloudinary.com/dlk5shsgs/image/upload/v1775172481/baby-pics-3_nx7eys.png" alt="image3" class="story-image image3 fade-in">
+      }
+      @if (visibleImages()[3]) {
+        <img src="https://res.cloudinary.com/dlk5shsgs/image/upload/v1775172480/baby-pics-4_cxtbdk.png" alt="image4" class="story-image image4 fade-in">
+      }
+      
+      <span class="story-text gelo">While Gelo was born late 1999,</span>
     </div>
 
-    <div [class.step4]="currentStep === 4" class="story-container">
-      <span class="story-text">Little did we know, our paths were already converging.</span>
+    <div [class.step4]="currentStep === 4" class="story-container fade-in">
+      <span class="story-text">Little did they know, their paths were already converging.</span>
     </div>
 
-    <div [class.step5]="currentStep === 5" class="story-container">
+    <div [class.step5]="currentStep === 5" class="story-container fade-in">
       <span class="story-text">From Classmates to Confidants:</span>
-      <span class="story-text indented">In 2012, we met as high school classmates.</span>
+      <span class="story-text indented">In 2012, they met as high school classmates.</span>
     </div>
 
-    <div [class.step6]="currentStep === 6" class="story-container">
-      <img src="https://res.cloudinary.com/dlk5shsgs/image/upload/v1774876067/class-pic_xta6y2.png" alt="Class Picture" />
+    <div [class.step6]="currentStep === 6" class="story-container fade-in">
+      <img class="unblurred" src="https://res.cloudinary.com/dlk5shsgs/image/upload/v1774876067/class-pic_xta6y2.png" alt="Class Picture" />
+
+      @if (classPictureTransition()) {
+        <img class="blurred fade-in" src="https://res.cloudinary.com/dlk5shsgs/image/upload/v1774876068/class-pic-blurred_lghqyp.png" alt="Class Picture Blurred" />
+      }
     </div>
 
-    <div [class.step7]="currentStep === 7" class="story-container">
-      <img src="https://res.cloudinary.com/dlk5shsgs/image/upload/v1774876068/class-pic-blurred_lghqyp.png" alt="Class Picture Blurred" />
-    </div>
-
-    <div [class.step8]="currentStep === 8" class="story-container">
+    <div [class.step7]="currentStep === 7" class="story-container fade-in">
       <span class="story-text">Between shared lessons and teenage dreams,</span>
       <div class="img-container">
         <img src="https://res.cloudinary.com/dlk5shsgs/image/upload/v1774876061/gelo-seniors-night_kilmrg.png" alt="Gelo Senior's Night" />
@@ -52,50 +76,50 @@
       </div>
     </div>
 
-    <div [class.step9]="currentStep === 9" class="story-container">
+    <div [class.step8]="currentStep === 8" class="story-container">
       <span class="story-text">Between shared lessons and teenage dreams,</span>
-      <div class="img-container">
+      <div class="img-container fade-in">
         <img src="https://res.cloudinary.com/dlk5shsgs/image/upload/v1774876063/ikki-grad-pic-hs_nxqwzw.png" alt="Gelo Grad Pic" />
         <img src="https://res.cloudinary.com/dlk5shsgs/image/upload/v1774876063/ikki-grad-pic-hs_nxqwzw.png" alt="Ikki Grad Pic" />
       </div>
     </div>
 
-    <div [class.step10]="currentStep === 10" class="story-container">
+    <div [class.step9]="currentStep === 9" class="story-container">
       <span class="story-text">Between shared lessons and teenage dreams,</span>
-      <div class="img-container">
+      <div class="img-container fade-in">
         <img src="https://res.cloudinary.com/dlk5shsgs/image/upload/v1774876058/gelo-grad-pic-college_yh36en.png" alt="Gelo Senior's Night" />
         <img src="https://res.cloudinary.com/dlk5shsgs/image/upload/v1774876060/ikki-grad-pic-college_qksyrp.png" alt="Ikki Senior's Night" />
       </div>
     </div>
 
-    <div [class.step11]="currentStep === 11" class="story-container">
-      <span class="story-text">we built a foundation of<br />friendship that refused to fade.</span>
-      <img src="https://res.cloudinary.com/dlk5shsgs/image/upload/v1774876064/ikki-gelo-prom_ys3gau.png" alt="Ikki Gelo Prom" />
+    <div [class.step10]="currentStep === 10" class="story-container fade-in">
+      <span class="story-text">they built a foundation of<br />friendship that refused to fade.</span>
+      <img src="https://res.cloudinary.com/dlk5shsgs/image/upload/v1775214745/ikki-gelo-prom-named_qk6lrx.png" alt="Ikki Gelo Prom" />
     </div>
 
-    <div [class.step12]="currentStep === 12" class="story-container">
+    <div [class.step11]="currentStep === 11" class="story-container fade-in">
       <span class="story-text">The Greatest Adventure:</span>
-      <span class="story-text">In 2022, we realized that the person we had been looking<br />for was the one who had been there all along.</span>
+      <span class="story-text">In 2022, they realized that the person they had been looking for was the one who had been there all along.</span>
     </div>
 
-    <div [class.step13]="currentStep === 13" class="story-container">
-      <span class="story-text">We traded "best friends" for "forever,"</span>
+    <div [class.step12]="currentStep === 12" class="story-container fade-in">
+      <span class="story-text">They traded "best friends" for "forever,"</span>
     </div>
 
-    <div [class.step14]="currentStep === 14" class="story-container">
+    <div [class.step13]="currentStep === 13" class="story-container fade-in">
       <img src="https://res.cloudinary.com/dlk5shsgs/image/upload/v1774876069/ikki-gelo-travels_fwmpik.png" alt="Ikki Gelo Travels" />
     </div>
 
-    <div [class.step15]="currentStep === 15" class="story-container">
+    <div [class.step14]="currentStep === 14" class="story-container fade-in">
       <span class="story-text">and in September 2025, Gelo asked the big question.</span>
     </div>
     
-    <div [class.step16]="currentStep === 16" class="story-container">
+    <div [class.step15]="currentStep === 15" class="story-container fade-in">
       <img src="https://res.cloudinary.com/dlk5shsgs/image/upload/v1774876065/ikki-gelo-proposal_w0gqy2.png" alt="Ikki Gelo Proposal" />
     </div>
 
-    <div [class.step17]="currentStep === 17" class="story-container">
-      <span class="story-container">Now, we can't wait to start our next chapter with you.</span>
+    <div [class.step16]="currentStep === 16" class="story-container fade-in">
+      <span class="story-text">Now, they can't wait to start their next chapter with you.</span>
     </div>
   </div>
 </div>

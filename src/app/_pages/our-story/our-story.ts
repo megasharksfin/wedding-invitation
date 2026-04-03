@@ -1,29 +1,61 @@
-import { Component } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { Component, OnDestroy, signal } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-our-story',
-  imports: [],
+  imports: [CommonModule],
   templateUrl: './our-story.html',
   styleUrl: './our-story.scss',
 })
-export class OurStory {
+export class OurStory implements OnDestroy {
   currentStep: number = 1;
-  
-  constructor (
+  visibleImages = signal([true, false, false, false]);
+  classPictureTransition = signal(false);
+  private timers: any[] = [];
+
+  constructor(
     private router: Router,
     private route: ActivatedRoute,
-  ) {}
+  ) { }
 
   navigate(): void {
     this.router.navigate(['../'], { relativeTo: this.route });
   }
 
-  next(): void {
-    this.currentStep++;
+  turnPage(toPage: number): void {
+    this.currentStep += toPage;
+
+    if (this.currentStep === 3) {
+      this.startImageTimers();
+    }
+
+    if (this.currentStep === 6) {
+      console.log('class picture transition', this.classPictureTransition.toString());
+      setTimeout(() => {
+        this.classPictureTransition.update(() => true);
+        console.log('after timeout', this.classPictureTransition.toString());
+      }, 2000);
+    }
+    console.log('current step', this.currentStep);
+  }
+  startImageTimers() {
+    this.timers.forEach(t => clearTimeout(t));
+    this.timers = [];
+
+    [1, 2, 3].forEach((imgIndex, i) => {
+      const timer = setTimeout(() => {
+        this.visibleImages.update(imgs => {
+          const updated = [...imgs];
+          updated[imgIndex] = true;
+          return updated;
+        });
+      }, (i + 1) * 1000);
+      this.timers.push(timer);
+    });
   }
 
-  prev(): void {
-    this.currentStep--;
+  ngOnDestroy() {
+    this.timers.forEach(t => clearTimeout(t));
   }
 }
