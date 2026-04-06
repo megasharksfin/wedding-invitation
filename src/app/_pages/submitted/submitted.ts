@@ -61,6 +61,7 @@ export class Submitted implements OnInit {
     this.isSubmitted.update(() => true);
     this.hasError.update(() => false);
     this.isMandatoryError.update(() => false);
+    this.isSuccess.update(() => false);
 
     const guestName = this.nameForm.get('guestName')?.value;
     const userResponse = this.nameForm.get('response')?.value;
