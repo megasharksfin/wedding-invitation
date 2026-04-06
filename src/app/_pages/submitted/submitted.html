@@ -1,5 +1,9 @@
 <div class="page-container">
   <div class="main-container">
+    <button class="home fade-in" type="button" (click)="navigate()">
+      <img src="https://res.cloudinary.com/dlk5shsgs/image/upload/v1774875649/home_lqdqps.svg" alt="home" />
+    </button>
+    
     @if (rsvp() == null) {
       <span class="loader"></span>
     } @else {
@@ -11,20 +15,21 @@
           <span class="main-text fade-in">Please accomplish the following Google Forms survey for your dinner menu and help us plan the wedding prep venue.</span>
           <ul class="main-text fade-in">
             <li>
-              <a href="https://docs.google.com/forms/d/e/1FAIpQLScF2rHPDUat4M4srGAdPZ6NZj-JrRVZcYunTNUUeRJux-k4mA/viewform?usp=header">Room Block Interest Check</a>
+              <a href="https://docs.google.com/forms/d/e/1FAIpQLScF2rHPDUat4M4srGAdPZ6NZj-JrRVZcYunTNUUeRJux-k4mA/viewform?usp=header" rel="noopener" target="_blank">Room Block Interest Check</a>
             </li>
             <li>
-              <a href="https://docs.google.com/forms/d/e/1FAIpQLSfVxIefSA3gC5vAaCLaBMp_C6XfZ3CFu6nEu9ZnWu6lH6LUlg/viewform?usp=header">Wedding Reception Dinner Menu</a>
+              <a href="https://docs.google.com/forms/d/e/1FAIpQLSfVxIefSA3gC5vAaCLaBMp_C6XfZ3CFu6nEu9ZnWu6lH6LUlg/viewform?usp=header" rel="noopener" target="_blank">Wedding Reception Dinner Menu</a>
             </li>
           </ul>
         </div>
       } @else {
-        <span class="main-text fade-in">We'll miss having you there, but we understand! Wishing you all the best, and we hope to see you soon to share the celebration.</span>
-        <span class="main-text fade-in">You may now exit this page. Thank you!</span>
+        <div class="reject">
+          <span class="main-text fade-in">We'll miss having you there, but we understand! Wishing you all the best, and we hope to see you soon to share the celebration.</span>
+        </div>
       }
       <form [formGroup]="nameForm" class="name-form fade-in" (ngSubmit)="submitOnBehalf()">
         <span class="main-text rsvp-submit fade-in">Would you like to submit an RSVP on behalf of another guest?</span>
-        <label for="guest-name">Guest Name</label>
+        <label class="guest-name-lbl" for="guest-name">Guest Name</label>
         <input type="text" id="guest-name" formControlName="guestName" placeholder="enter full name here" />
         @if (hasError()) {
           <span class="error-message">Guest not found.</span>
@@ -47,7 +52,7 @@
             </div>
           </div>
           <button type="submit" class="submit">
-            <img class="submit-icon" src="/element_images/Buttons/submit-icon.png" alt="Submit" />
+            <img class="submit-icon" src="https://res.cloudinary.com/dlk5shsgs/image/upload/v1775465457/submit-icon_ydbkt9.png" alt="Submit" />
             <span class="btn-text">Submit</span>
           </button>
         } @else {

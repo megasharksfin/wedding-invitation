@@ -37,7 +37,7 @@ export class Details implements OnInit {
   getDimensions() {
     this.attireImage = window.innerWidth <= 968
       ? 'https://res.cloudinary.com/dlk5shsgs/image/upload/v1774875645/Attire_Guide_Mobile_gbnnrp.png'
-      : 'https://res.cloudinary.com/dlk5shsgs/image/upload/v1774875645/Attire_Guide_Desktop_gwcl5m.png';
+      : 'https://res.cloudinary.com/dlk5shsgs/image/upload/v1775466071/Attire_Guide_Desktop_lrpktn.png';
   }
 
   back(): void {

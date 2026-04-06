@@ -110,4 +110,8 @@ export class Submitted implements OnInit {
       },
     })
   }
+
+  navigate(): void {
+    this.router.navigate(['../../'], { relativeTo: this.route });
+  }
 }

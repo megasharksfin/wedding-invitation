@@ -14,8 +14,7 @@
     <button 
       class="next fade-in"
       type="button"
-      (click)="turnPage(1)"
-      [class.is-hidden]="currentStep === 16">
+      (click)="turnPage(1)">
       <img src="https://res.cloudinary.com/dlk5shsgs/image/upload/v1774875639/right-arrow-standard_i8ezrg.png" alt="next" />
     </button>
     
@@ -79,7 +78,7 @@
     <div [class.step8]="currentStep === 8" class="story-container">
       <span class="story-text">Between shared lessons and teenage dreams,</span>
       <div class="img-container fade-in">
-        <img src="https://res.cloudinary.com/dlk5shsgs/image/upload/v1774876063/ikki-grad-pic-hs_nxqwzw.png" alt="Gelo Grad Pic" />
+        <img src="https://res.cloudinary.com/dlk5shsgs/image/upload/v1775466274/gelo-grad-pic-hs_vzuau4.png" alt="Gelo Grad Pic" />
         <img src="https://res.cloudinary.com/dlk5shsgs/image/upload/v1774876063/ikki-grad-pic-hs_nxqwzw.png" alt="Ikki Grad Pic" />
       </div>
     </div>
@@ -119,9 +118,7 @@
     </div>
 
     <div [class.step16]="currentStep === 16" class="story-container fade-in">
-      <span class="story-text">Now, they can't wait to start their
-        <button type="button" class="link" (click)="nextLink()">next</button>
-        chapter with you.</span>
+      <span class="story-text">Now, they can't wait to start their next chapter with you.</span>
     </div>
   </div>
 </div>

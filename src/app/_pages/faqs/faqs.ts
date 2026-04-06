@@ -18,11 +18,11 @@ export class Faqs {
     },
     {
       question: '2. What are the addresses of the wedding ceremony and reception venues?',
-      answer: `Chapel on the Hill, Don Bosco Batulao, Brgy. Cahil, Calaca Batangas.\r\nMarcia Adams Restaurant, Sikat Rd, Alfonso, 4123 Cavite`,
+      answer: `<a href="https://maps.app.goo.gl/1oCzCcMPsTVg53T28" rel="noopener" target="_blank">Chapel on the Hill, Don Bosco Batulao, Brgy. Cahil, Calaca Batangas.</a>\r\n<a href="https://maps.app.goo.gl/7pHsBSHZ4UCLW7nh7" rel="noopener" target="_blank">Marcia Adams Restaurant, Sikat Rd, Alfonso, 4123 Cavite</a>`,
     },
     {
-      question: '3. What is the dress code and motif for your wedding?',
-      answer: 'Our dress code is semi-formal. The color motif for the wedding is deep sunset -- Orange, Burgundy, Plum. We have created a pinterest board as reference to what colors are preferred. While we appreciate sticking to the attire guide, it is not mandatory and everyone invited is welcome regardless of outfit.'
+      question: '3. What is the dress code and theme for your wedding?',
+      answer: 'Our dress code is semi-formal. The color theme for the wedding is deep sunset -- Orange, Burgundy, Plum. We have created a pinterest board as reference to what colors are preferred. While we appreciate sticking to the attire guide, it is not mandatory and everyone invited is welcome regardless of outfit.<br /><a href="https://pin.it/52d7AUX1z" rel="noopener" target="_blank">Outfit ideas for women.</a> <a href="https://pin.it/1R0Qj3bHa" rel="noopener" target="_blank">Outfit ideas for men.</a>'
     },
     {
       question: '4. What is the weather like in the area?',

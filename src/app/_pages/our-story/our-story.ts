@@ -24,6 +24,11 @@ export class OurStory implements OnDestroy {
   }
 
   turnPage(toPage: number): void {
+    if (this.currentStep === 16) {
+      this.router.navigate(['../details'], { relativeTo: this.route });
+      return;
+    }
+    
     this.currentStep += toPage;
 
     if (this.currentStep === 3) {
@@ -35,7 +40,7 @@ export class OurStory implements OnDestroy {
       setTimeout(() => {
         this.classPictureTransition.update(() => true);
         console.log('after timeout', this.classPictureTransition.toString());
-      }, 2000);
+      }, 1200);
     }
     console.log('current step', this.currentStep);
   }
