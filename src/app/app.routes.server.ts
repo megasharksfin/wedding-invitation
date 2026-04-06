@@ -42,6 +42,14 @@ export const serverRoutes: ServerRoute[] = [
     renderMode: RenderMode.Client,
   },
   {
+    path: 'main/:id/menu/rsvp',
+    renderMode: RenderMode.Client,
+  },
+  {
+    path: 'main/:id/menu/rsvp/submitted',
+    renderMode: RenderMode.Client,
+  },
+  {
     path: '**',
     renderMode: RenderMode.Prerender
   }
