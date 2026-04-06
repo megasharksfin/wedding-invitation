@@ -170,6 +170,18 @@
   }
 }
 
+.step16 {
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+
+  > img {
+    margin-top: 15dvh;
+    max-height: 50dvh;
+    margin-bottom: 5dvh;
+  }
+}
+
 .step5 {
   display: flex;
 

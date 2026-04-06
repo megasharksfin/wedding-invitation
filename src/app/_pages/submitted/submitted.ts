@@ -1,4 +1,4 @@
-import { Component, OnInit, signal } from '@angular/core';
+import { ChangeDetectorRef, Component, OnInit, signal } from '@angular/core';
 import { RsvpService } from '../../_services';
 import { ActivatedRoute, Router } from '@angular/router';
 import { FormControl, FormGroup, ReactiveFormsModule } from '@angular/forms';
@@ -14,6 +14,7 @@ export class Submitted implements OnInit {
     private router: Router,
     private route: ActivatedRoute,
     private rsvpService: RsvpService,
+    private cdr: ChangeDetectorRef,
   ) {}
 
   rsvp = signal(null);
@@ -25,6 +26,7 @@ export class Submitted implements OnInit {
     guestName: new FormControl(''),
     response: new FormControl('')
   });
+  latestResponse = signal(null);
 
   ngOnInit(): void {
     const id = this.route.snapshot.root.children[0]?.params['id'];
@@ -94,10 +96,13 @@ export class Submitted implements OnInit {
         };
         this.rsvpService.sheetsPost$(JSON.stringify(rsvpData)).subscribe({
           next: (res) => {
+            const rsvpRes = (res as any).rsvp;
             this.isSubmitted.update(() => false);
             this.isSuccess.update(() => true);
             this.nameForm.get('guestName')?.setValue('');
             this.nameForm.get('response')?.setValue(null);
+            this.latestResponse.update(() => rsvpRes);
+            console.log('latest response', this.latestResponse.toString());
           },
           error: (err) => {
             console.log('err', err);

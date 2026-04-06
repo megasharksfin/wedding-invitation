@@ -26,6 +26,17 @@
         <div class="reject">
           <span class="main-text fade-in">We'll miss having you there, but we understand! Wishing you all the best, and we hope to see you soon to share the celebration.</span>
         </div>
+        @if (latestResponse()) {
+          <span class="main-text fade-in">Please accomplish the following Google Forms survey on behalf of the attendee for their dinner menu and help us plan the wedding prep venue.</span>
+          <ul class="main-text fade-in">
+            <li>
+              <a href="https://docs.google.com/forms/d/e/1FAIpQLScF2rHPDUat4M4srGAdPZ6NZj-JrRVZcYunTNUUeRJux-k4mA/viewform?usp=header" rel="noopener" target="_blank">Room Block Interest Check</a>
+            </li>
+            <li>
+              <a href="https://docs.google.com/forms/d/e/1FAIpQLSfVxIefSA3gC5vAaCLaBMp_C6XfZ3CFu6nEu9ZnWu6lH6LUlg/viewform?usp=header" rel="noopener" target="_blank">Wedding Reception Dinner Menu</a>
+            </li>
+          </ul>
+        }
       }
       <form [formGroup]="nameForm" class="name-form fade-in" (ngSubmit)="submitOnBehalf()">
         <span class="main-text rsvp-submit fade-in">Would you like to submit an RSVP on behalf of another guest?</span>

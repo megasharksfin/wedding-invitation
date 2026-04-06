@@ -14,7 +14,8 @@
     <button 
       class="next fade-in"
       type="button"
-      (click)="turnPage(1)">
+      (click)="turnPage(1)"
+      [class.is-hidden]="currentStep === 16">
       <img src="https://res.cloudinary.com/dlk5shsgs/image/upload/v1774875639/right-arrow-standard_i8ezrg.png" alt="next" />
     </button>
     
@@ -118,6 +119,7 @@
     </div>
 
     <div [class.step16]="currentStep === 16" class="story-container fade-in">
+      <img src="https://res.cloudinary.com/dlk5shsgs/image/upload/v1775470944/wedding-expo_qq3jk7.gif" alt="wedding-expo" />
       <span class="story-text">Now, they can't wait to start their next chapter with you.</span>
     </div>
   </div>
