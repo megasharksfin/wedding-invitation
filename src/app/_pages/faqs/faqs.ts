@@ -14,7 +14,7 @@ export class Faqs {
   accordionList: faq[] = [
     {
       question: '1. What date should I RSVP by?',
-      answer: 'Please RSVP by May 1, 2026',
+      answer: 'Please RSVP by June 01, 2026',
     },
     {
       question: '2. What are the addresses of the wedding ceremony and reception venues?',

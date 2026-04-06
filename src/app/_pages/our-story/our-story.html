@@ -119,7 +119,9 @@
     </div>
 
     <div [class.step16]="currentStep === 16" class="story-container fade-in">
-      <span class="story-text">Now, they can't wait to start their next chapter with you.</span>
+      <span class="story-text">Now, they can't wait to start their
+        <button type="button" class="link" (click)="nextLink()">next</button>
+        chapter with you.</span>
     </div>
   </div>
 </div>

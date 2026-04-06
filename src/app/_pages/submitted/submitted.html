@@ -1,0 +1,61 @@
+<div class="page-container">
+  <div class="main-container">
+    @if (rsvp() == null) {
+      <span class="loader"></span>
+    } @else {
+      @if (rsvp() == true) {
+        <img src="https://res.cloudinary.com/dlk5shsgs/image/upload/v1774874860/Group_5_ok3eol.png" alt="Celine & Gelo" class="celine-gelo fade-in" />
+
+        <div class="content-container">
+          <span class="main-text fade-in">We're so thrilled you'll be joining us on our special day! We can't wait to celebrate with you and make wonderful memories together. See you soon! 💕</span>
+          <span class="main-text fade-in">Please accomplish the following Google Forms survey for your dinner menu and help us plan the wedding prep venue.</span>
+          <ul class="main-text fade-in">
+            <li>
+              <a href="https://docs.google.com/forms/d/e/1FAIpQLScF2rHPDUat4M4srGAdPZ6NZj-JrRVZcYunTNUUeRJux-k4mA/viewform?usp=header">Room Block Interest Check</a>
+            </li>
+            <li>
+              <a href="https://docs.google.com/forms/d/e/1FAIpQLSfVxIefSA3gC5vAaCLaBMp_C6XfZ3CFu6nEu9ZnWu6lH6LUlg/viewform?usp=header">Wedding Reception Dinner Menu</a>
+            </li>
+          </ul>
+        </div>
+      } @else {
+        <span class="main-text fade-in">We'll miss having you there, but we understand! Wishing you all the best, and we hope to see you soon to share the celebration.</span>
+        <span class="main-text fade-in">You may now exit this page. Thank you!</span>
+      }
+      <form [formGroup]="nameForm" class="name-form fade-in" (ngSubmit)="submitOnBehalf()">
+        <span class="main-text rsvp-submit fade-in">Would you like to submit an RSVP on behalf of another guest?</span>
+        <label for="guest-name">Guest Name</label>
+        <input type="text" id="guest-name" formControlName="guestName" placeholder="enter full name here" />
+        @if (hasError()) {
+          <span class="error-message">Guest not found.</span>
+        }
+        @if (isSuccess()) {
+          <span class="success">Response saved!</span>
+        }
+        @if (isMandatoryError()) {
+          <span class="error-message">Name and RSVP response are required.</span>
+        }
+        @if (!isSubmitted()) {
+          <div class="rsvp-buttons">
+            <div class="checkbox-container">
+              <input class="checkbox" type="radio"id="rsvp-accept" formControlName="response" value="true" required>
+              <label class="radio-label" for="rsvp-accept">Attending</label>
+            </div>
+            <div class="checkbox-container">
+              <input class="checkbox" type="radio" id="rsvp-reject" formControlName="response" value="false" required>
+              <label class="radio-label" for="rsvp-reject">Not Attending</label>
+            </div>
+          </div>
+          <button type="submit" class="submit">
+            <img class="submit-icon" src="/element_images/Buttons/submit-icon.png" alt="Submit" />
+            <span class="btn-text">Submit</span>
+          </button>
+        } @else {
+          <span class="loader"></span>
+        }
+      </form>
+
+      <span class="fade-in">Otherwise, you may now exit this page. Thank you!</span>
+    }
+  </div>
+</div>

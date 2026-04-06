@@ -96,11 +96,13 @@
 @media (max-width: 968px) {
   .main-container {
     width: 100%;
-    height: 100%;
+    height: 100dvh;
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
     align-items: center;
+    position: absolute;
+    top: 0;
   }
 
   .celine-gelo {
@@ -110,7 +112,7 @@
 
   .gif {
     position: absolute;
-    bottom: 5vh;
+    bottom: 0dvh;
     max-height: 50vh;
     max-width: 100vw;
   }
@@ -297,4 +299,8 @@ a {
   padding: 10px;
   border-radius: 50%;
   background-color: transparent;
+}
+
+.notice {
+  color: rgba(0,0,0,0.5);
 }

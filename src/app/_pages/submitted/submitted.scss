@@ -1,0 +1,271 @@
+@import url('https://fonts.googleapis.com/css2?family=Piazzolla&display=swap');
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+.page-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  font-family: 'Piazzolla', serif;
+  touch-action: manipulation;
+  position: relative;
+  min-height: 100vh;
+  background-color: #AFAFAF;
+}
+
+.main-container {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  background-color: #F8EECA;
+  font-family: 'Piazzolla', serif;
+}
+
+.fade-in {
+  animation: fadeIn 1.5s ease-in forwards;
+}
+
+.main-text {
+  font-size: 2vh;
+}
+
+.celine-gelo {
+  margin-bottom: 3vh !important;
+}
+
+ul {
+  margin: 3vh 0;
+}
+
+.error-message {
+  color: red;
+  font-size: 1.5vh;
+}
+
+.success {
+  color: green;
+  font-size: 1.5vh;
+}
+
+.submit {
+  border: solid 2px black;
+  font-size: 2vh;
+  background-color: #E8C6A8;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  padding: 0.5vh;
+  margin-top: 3vh;
+
+  > .submit-icon {
+    height: 2.5vh;
+    margin-right: 0.5vh;
+  }
+}
+
+.content-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+
+  span {
+    text-align: center;
+  }
+
+  > :first-child {
+    margin-bottom: 3vh;
+  }
+
+  a {
+    color: black;
+  }
+}
+
+.rsvp-submit {
+  text-align: center;
+}
+
+.name-form {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  width: 100%;
+  background-color: #fbf5e1;
+  box-shadow:
+    0 8px 24px rgba(0, 0, 0, 0.55),
+    inset 0 0 0 1px rgba(255, 255, 255, 0.04);
+    border-radius: 15px;
+}
+
+input[type="text"] {
+  background-color: #eee;
+}
+
+.rsvp-buttons {
+  display: flex;
+  align-items: center;
+  justify-content: stretch;
+  margin-top: 3vh;
+
+  > label {
+    padding: 0;
+    margin: 0;
+  }
+
+  > :first-child {
+    margin-right: 1vw;
+  }
+}
+
+.radio-label {
+  border: solid 2px black;
+  padding: 0.5vh;
+  border-radius: 10px;
+  cursor: pointer;
+  min-width: 10vw;
+  text-align: center;
+  font-size: 2vh;
+}
+
+.checkbox {
+  display: none;
+}
+
+.checkbox:checked + label {
+  background-color: #E8C6A8;
+  /* .radio-label {
+    background-color: #E8C6A8;
+  } */
+}
+
+.checkbox-container {
+  display: flex;
+  align-items: center;
+  > :first-child {
+    margin-right: 0.5vw;
+  }
+}
+
+.loader {
+  border-radius: 50%;
+  margin-top: 5vh;
+  position: relative;
+  animation: rotate 1s linear infinite;
+  justify-self: center;
+}
+.loader::before , .loader::after {
+  content: "";
+  box-sizing: border-box;
+  position: absolute;
+  inset: 0px;
+  border-radius: 50%;
+  border: 5px solid #dd9f7c;
+  animation: prixClipFix 2s linear infinite ;
+}
+.loader::after{
+  transform: rotate3d(90, 90, 0, 180deg );
+  border-color: rgb(240, 212, 196);
+}
+
+@keyframes rotate {
+  0%   {transform: rotate(0deg)}
+  100%   {transform: rotate(360deg)}
+}
+
+@keyframes prixClipFix {
+    0%   {clip-path:polygon(50% 50%,0 0,0 0,0 0,0 0,0 0)}
+    50%  {clip-path:polygon(50% 50%,0 0,100% 0,100% 0,100% 0,100% 0)}
+    75%, 100%  {clip-path:polygon(50% 50%,0 0,100% 0,100% 100%,100% 100%,100% 100%)}
+}
+
+@media (min-width: 968px) {
+  .main-container {
+    height: 90vh;
+    width: 90vw;
+    box-shadow:
+      0 8px 24px rgba(0, 0, 0, 0.55),
+      inset 0 0 0 1px rgba(255, 255, 255, 0.04);
+    display: flex;
+    flex-direction: column;
+  }
+
+  .celine-gelo {
+    max-width: 960px;
+    margin-top: 9.4vh;
+  }
+
+  .content-container {
+    width: 60vw;
+  }
+
+  .name-form {
+    width: 30vw;
+    padding: 2vh 3vw;
+    margin-bottom: 3vh;
+
+    > input[type="text"] {
+      align-self: stretch;
+      width: 100% !important;
+    }
+
+    > label {
+      align-self: flex-start;
+    }
+  }
+
+  .loader {
+    width: 2vw;
+    height: 2vw;
+  }
+}
+
+@media (max-width: 968px) {
+  .main-container {
+    width: 100%;
+    height: 100dvh;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    position: absolute;
+    top: 0;
+  }
+
+  .celine-gelo {
+    width: min(80vw, 420px);
+    margin: 7vh 0 0;
+  }
+
+  .name-form {
+    padding: 3vh 5vw;
+    align-self: center;
+    width: 90vw;
+    margin-bottom: 5vh;
+
+    > input[type="text"], label {
+      align-self: flex-start;
+      width: 100% !important;
+    }
+  }
+
+  .radio-label {
+    min-width: 40vw;
+  }
+
+  .loader {
+    width: 4vh;
+    height: 4vh;
+  }
+}

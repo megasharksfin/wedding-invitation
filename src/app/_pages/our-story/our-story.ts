@@ -55,6 +55,10 @@ export class OurStory implements OnDestroy {
     });
   }
 
+  nextLink(): void {
+    this.router.navigate(['../details'], { relativeTo: this.route });
+  }
+
   ngOnDestroy() {
     this.timers.forEach(t => clearTimeout(t));
   }

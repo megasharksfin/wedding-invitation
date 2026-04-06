@@ -1,0 +1,40 @@
+<div class="page-container">
+  <div class="main-container">
+    
+    <button class="home fade-in" type="button" (click)="navigate()">
+      <img src="https://res.cloudinary.com/dlk5shsgs/image/upload/v1774875649/home_lqdqps.svg" alt="home" />
+    </button>
+    <img src="https://res.cloudinary.com/dlk5shsgs/image/upload/v1774874860/Group_5_ok3eol.png" alt="Celine & Gelo" class="celine-gelo" />
+
+    @if (!guestName()) {
+      <span class="loader spacer"></span>
+    } @else {
+      <div class="rsvp-container fade-in">
+
+        <form class="rsvp" [formGroup]="rsvpForm" (ngSubmit)="submitRsvp()">
+          <span class="rsvp-text">We hope to celebrate with you! Will you be there?</span>
+          <div class="rsvp-buttons">
+            <div class="checkbox-container">
+              <input class="checkbox" type="radio"id="rsvp-accept" formControlName="response" value="true" required>
+              <label class="radio-label" for="rsvp-accept">Wouldn't miss it!</label>
+            </div>
+            <div class="checkbox-container">
+              <input class="checkbox" type="radio" id="rsvp-reject" formControlName="response" value="false" required>
+              <label class="radio-label" for="rsvp-reject">Sorry, I can't make it</label>
+            </div>
+          </div>
+          @if (!isSubmitted) {
+            <button type="submit" class="submit">
+              <img class="submit-icon" src="/element_images/Buttons/submit-icon.png" alt="Submit" />
+              <span class="btn-text">Submit</span>
+            </button>
+          } @else {
+            <span class="loader"></span>
+          }
+        </form>
+        <span class="rsvp-notice fade-in">Please note that this RSVP is only applicable for {{ guestName() }}.</span>
+        <span class="rsvp-by">Please RSVP by June 01, 2026.</span>
+      </div>
+    }
+  </div>
+</div>

@@ -70,6 +70,12 @@ export class InvitationMenu implements OnInit {
       case 'faqs':
         this.router.navigate(['./faqs'], { relativeTo: this.route });
         break;
+      case 'rsvp':
+        this.router.navigate(['./rsvp'], { relativeTo: this.route });
+        break;
+      default:
+        this.router.navigate(['**']);
+        break;
     }
   }
 }

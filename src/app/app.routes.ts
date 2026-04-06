@@ -43,6 +43,14 @@ export const routes: Routes = [
     loadComponent: () => import('./_pages/faqs/faqs').then(m => m.Faqs),
   },
   {
+    path: 'main/:id/menu/rsvp',
+    loadComponent: () => import('./_pages/rsvp/rsvp').then(m => m.Rsvp),
+  },
+  {
+    path: 'main/:id/menu/rsvp/submitted',
+    loadComponent: () => import('./_pages/submitted/submitted').then(m => m.Submitted),
+  },
+  {
     path: '**',
     redirectTo: 'login',
   },

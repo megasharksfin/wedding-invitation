@@ -22,9 +22,6 @@
   .notice {
     font-family: 'Piazzolla', serif;
     font-size: 14px;
-    position: absolute;
-    bottom: 7vh;
-    opacity: 0.5;
     animation: fadeIn 1.5s ease-in forwards;
   }
 
@@ -48,8 +45,6 @@
   .notice {
     font-family: 'Piazzolla', serif;
     font-size: 10px;
-    margin-top: 25%;
-    opacity: 0.5;
     animation: fadeIn 1.5s ease-in forwards;
   }
 
@@ -77,4 +72,7 @@
 
 .notice {
   color: rgba(0,0,0,0.5);
+  position: absolute;
+  bottom: 7vh;
+  opacity: 0.5;
 }
