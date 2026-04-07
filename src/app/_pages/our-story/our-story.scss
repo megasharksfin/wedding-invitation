@@ -23,8 +23,9 @@
   font-family: 'Piazzolla', serif;
   touch-action: manipulation;
   position: relative;
-  min-height: 100vh;
+  min-height: 100dvh;
   background-color: #AFAFAF;
+  overflow: hidden;
 }
 
 .main-container {
@@ -82,7 +83,7 @@
   align-items: center;
 
   > .title {
-    margin-top: 6vh;
+    margin-top: 6dvh;
     font-size: 48px;
     font-family: 'Perpetua Titling MT', serif;
   }
@@ -104,12 +105,12 @@
 
   > .story-text {
     position: absolute;
-    top: 40vh;
+    top: 40dvh;
     left: 10vw;
   }
 
   > .indented {
-    top: 47vh;
+    top: 47dvh;
     left: 18vw;
   }
 }
@@ -119,15 +120,15 @@
 
   > .story-text {
     position: absolute;
-    top: 15vh;
+    top: 15dvh;
     left: 10vw;
   }
 
   > .story-image {
     position: absolute;
-    top: 25vh;
+    top: 25dvh;
     left: 10vw;
-    max-height: 45vh;
+    max-height: 45dvh;
   }
 
   > .image1 {
@@ -136,25 +137,25 @@
   }
 
   > .image2 {
-    top: 27vh;
+    top: 27dvh;
     left: 30vw;
   }
 
   > .image3 {
     left: 25vw;
-    top: 27vh;
-    max-height: 55vh;
+    top: 27dvh;
+    max-height: 55dvh;
   }
 
   > .image4 {
     left: 18vw;
-    top: 27vh;
-    max-height: 47vh;
+    top: 27dvh;
+    max-height: 47dvh;
   }
 
   > .gelo {
     position: absolute;
-    bottom: 5vh;
+    bottom: 5dvh;
     left: 55vw;
     font-size: 2.5vw;
   }
@@ -165,7 +166,7 @@
 
   > .story-text {
     position: absolute;
-    bottom: 15vh;
+    bottom: 15dvh;
     left: 15vw;
   }
 }
@@ -187,12 +188,12 @@
 
   > .story-text {
     position: absolute;
-    top: 40vh;
+    top: 40dvh;
     left: 10vw;
   }
 
   > .indented {
-    top: 47vh;
+    top: 47dvh;
     left: 35vw;
   }
 }
@@ -202,10 +203,10 @@
 
   > img {
     width: 90vw;
-    height: 90vh;
+    height: 90dvh;
     position: absolute;
     left: 5vw;
-    top: 5vh;
+    top: 5dvh;
   }
 
   > .unblurred {
@@ -222,7 +223,7 @@
 
   > .story-text {
     position: absolute;
-    top: 6vh;
+    top: 6dvh;
     left: 8vw;
   }
 
@@ -236,8 +237,8 @@
     }
 
     > img {
-      max-height: 70vh;
-      margin-top: 20vh;
+      max-height: 70dvh;
+      margin-top: 20dvh;
     }
   }
 }
@@ -270,7 +271,7 @@
   margin: 0 20vw;
 
   > :first-child {
-    margin-bottom: 3vh;
+    margin-bottom: 3dvh;
   }
 }
 
@@ -278,7 +279,7 @@
   display: flex;
 
   > span {
-    margin-top: 20vh;
+    margin-top: 20dvh;
   }
 }
 
