@@ -87,10 +87,10 @@ ul {
   > :first-child {
     margin-bottom: 3vh;
   }
+}
 
-  a {
-    color: black;
-  }
+a {
+  color: black;
 }
 
 .rsvp-submit {
@@ -173,6 +173,13 @@ input[type="text"] {
   > :first-child {
     margin-right: 0.5vw;
   }
+}
+
+.survey {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
 }
 
 .loader {
@@ -324,5 +331,13 @@ input[type="text"] {
     span {
       text-align: center;
     }
+  }
+
+  .main-text {
+    text-align: center;
+  }
+
+  li {
+    text-align: left;
   }
 }

@@ -11,7 +11,7 @@ export class Details implements OnInit {
   constructor (private router: Router, private route: ActivatedRoute) {}
 
   isClicked: boolean = false;
-  nextPage: boolean = false;
+  currentPage: number = 1;
   attireImage: string = '';
   
   ngOnInit() {
@@ -23,10 +23,11 @@ export class Details implements OnInit {
   }
 
   toggleDisplay(): void {
-    if (this.isClicked) return;
-
-    this.isClicked = true;
-    this.nextPage = true;
+    if (this.currentPage === 3) {
+      return;
+    }
+    this.currentPage++;
+    console.log('current page', this.currentPage);
   }
 
   @HostListener('window:resize')
@@ -41,9 +42,7 @@ export class Details implements OnInit {
   }
 
   back(): void {
-    const currentUrl = this.router.url;
-    this.router.navigateByUrl('/', { skipLocationChange: true }).then(() => {
-      this.router.navigate([currentUrl]);
-    });
+    this.currentPage--;
+    console.log('current page', this.currentPage);
   }
 }

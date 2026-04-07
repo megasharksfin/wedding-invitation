@@ -1,17 +1,22 @@
 <div class="page-container">
-  <div class="main-container" (click)="toggleDisplay()">
+  <div class="main-container">
     <div class="navigation-buttons fade-in">
       <button class="icon-btn home" type="button" (click)="navigate()">
         <img src="https://res.cloudinary.com/dlk5shsgs/image/upload/v1774875649/home_lqdqps.svg" alt="home" />
       </button>
 
-      @if (nextPage) {
+      @if (currentPage !== 1) {
         <button class="icon-btn back fade-in" type="button" (click)="back()">
           <img src="https://res.cloudinary.com/dlk5shsgs/image/upload/v1774875649/left-arrow-standard_gcferr.png" alt="back" />
         </button>
       }
+      @if (currentPage !== 3) {
+        <button class="icon-btn back fade-in" type="button" (click)="toggleDisplay()">
+          <img src="https://res.cloudinary.com/dlk5shsgs/image/upload/v1774875639/right-arrow-standard_i8ezrg.png" alt="back" />
+        </button>
+      }
     </div>
-    @if (!nextPage) {
+    @if (currentPage === 1) {
       <img class="celine-gelo fade-in" src="https://res.cloudinary.com/dlk5shsgs/image/upload/v1774874860/Group_5_ok3eol.png" alt="Celine & Gelo">
 
       <div class="details-container fade-in">
@@ -31,9 +36,46 @@
           </div>
         </div>
       </div>
+    } @else if (currentPage === 2) {
+      <img class="celine-gelo fade-in" src="https://res.cloudinary.com/dlk5shsgs/image/upload/v1774874860/Group_5_ok3eol.png" alt="Celine & Gelo">
 
-      <span class="small-detail notice fade-in">Press anywhere to continue.</span>
-    } @else {
+      <div class="entourage-container fade-in">
+        <div class="main-divider">
+          <div class="divider">
+            <div class="parent-container">
+              <span class="subheader">Parents of the Groom</span>
+              <span class="guest">Redentor Manalo</span>
+              <span class="guest">Mary Jane Manalo</span>
+            </div>
+            <div class="parent-container">
+              <span class="subheader">Parents of the Bride</span>
+              <span class="guest">Feliciano Arcueno</span>
+              <span class="guest">Rosita Arcueno</span>
+            </div>
+          </div>
+        </div>
+        <div class="main-divider">
+          <span class="header-text">Primary Sponsors</span>
+          <span class="guest">Mr. Jayson & Mrs. Aileen Lontoc</span>
+          <!-- <span class="guest">Mrs. Aileen Lontoc</span> -->
+          <span class="guest">Mr. Andrew & Mrs. Maylyn Manzanilla</span>
+          <!-- <span class="guest">Mrs. Maylyn Manzanilla</span> -->
+        </div>
+        <div class="main-divider">
+          <span class="header-text">Secondary Sponsors</span>
+          <div class="parent-container">
+            <span class="guest-header">Veil</span>
+            <span class="guest">Lovella Cyrille Arcueno-Bitera</span>
+            <span class="guest">Jianred Mart Manalo</span>
+          </div>
+          <div class="parent-container cord">
+            <span class="guest-header">Cord</span>
+            <span class="guest">Casey Sebastianne Arcueno</span>
+            <span class="guest">Kent Ian Dar</span>
+          </div>
+        </div>
+      </div>
+    } @else if (currentPage === 3) {
       <div class="attire-guide fade-in">
         <div class="button-guides">
           <a href="https://pin.it/52d7AUX1z" rel="noopener" target="_blank" class="guide-btn" type="button">
@@ -49,7 +91,7 @@
       </div>
     }
 
-    @if (!nextPage) {
+    @if (currentPage === 1) {
       <img class="gif fade-in" src="https://res.cloudinary.com/dlk5shsgs/image/upload/v1774874862/Details_Speed_Paint_jbnkml.gif" alt="Chapel on the HIll" />
     }
   </div>
