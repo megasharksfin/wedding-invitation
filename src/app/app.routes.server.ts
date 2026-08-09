@@ -14,6 +14,14 @@ export const serverRoutes: ServerRoute[] = [
     renderMode: RenderMode.Client,
   },
   {
+    path: 'main/:id/seat-finder',
+    renderMode: RenderMode.Client,
+  },
+  {
+    path: 'main/:id/invitation',
+    renderMode: RenderMode.Client,
+  },
+  {
     path: 'main/:id/menu',
     renderMode: RenderMode.Client,
   },

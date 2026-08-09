@@ -12,6 +12,14 @@ export const routes: Routes = [
   },
   {
     path: 'main/:id',
+    loadComponent: () => import('./_pages/main-nav/main-nav').then(m => m.MainNav),
+  },
+  {
+    path: 'main/:id/seat-finder',
+    loadComponent: () => import('./_pages/seat-finder/seat-finder').then(m => m.SeatFinder),
+  },
+  {
+    path: 'main/:id/invitation',
     loadComponent: () => import('./_pages/main-invitation/main-invitation').then(m => m.MainInvitation),
   },
   {

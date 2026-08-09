@@ -1,0 +1,296 @@
+@import url('https://fonts.googleapis.com/css2?family=Pinyon+Script&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Piazzolla&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600&display=swap');
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@media (min-width: 968px) {
+  .main-container {
+    height: 90vh;
+    width: 90vw;
+    box-shadow:
+      0 8px 24px rgba(0, 0, 0, 0.55),
+      inset 0 0 0 1px rgba(255, 255, 255, 0.04);
+  }
+
+  .user-name {
+    font-size: 28px;
+  }
+
+  .wedding-names {
+    width: 50vw;
+    // margin-bottom: 2vh;
+  }
+
+  .countdown {
+    padding: 4vh 4vw;
+  }
+
+  .countdown-title {
+    font-size: 24px;
+  }
+
+  .countdown-row {
+    gap: 1.5vw;
+  }
+
+  .flip-card {
+    --card-width: 88px;
+    --card-height: 110px;
+
+    font-size: 76px;
+  }
+
+  .countdown-label {
+    font-size: 16px;
+  }
+
+  .btn-container {
+    margin-top: 3vh;
+    flex-direction: row;
+
+    > *:not(:last-child) {
+      margin-right: 2vw;
+    }
+  }
+
+  .btn-bg {
+    min-width: 240px;
+    height: 70px;
+    font-size: 28px;
+  }
+}
+
+@media (max-width: 967px) {
+  .main-container {
+    width: 100%;
+    height: 100dvh;
+  }
+
+  .user-name {
+    font-size: 20px;
+  }
+
+  .wedding-names {
+    width: min(100vw, 420px);
+    // margin-bottom: 0.5h;
+  }
+
+  .countdown {
+    padding: 3vh 5vw;
+    width: 80vw;
+    max-width: 340px;
+  }
+
+  .countdown-title {
+    font-size: 14px;
+  }
+
+  .countdown-row {
+    gap: 2vw;
+  }
+
+  .flip-card {
+    --card-width: 42px;
+    --card-height: 54px;
+
+    font-size: 36px;
+  }
+
+  .countdown-label {
+    font-size: 9px;
+  }
+
+  .btn-container {
+    margin-top: 0.5vh;
+    flex-direction: column;
+    width: 70vw;
+    max-width: 320px;
+
+    > *:not(:last-child) {
+      margin-bottom: 2.5vh;
+    }
+  }
+
+  .btn-bg {
+    width: 100%;
+    height: 60px;
+    font-size: 20px;
+  }
+}
+
+.page-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  height: 100%;
+  min-height: 100vh;
+  position: relative;
+  font-family: 'Piazzolla', serif;
+  touch-action: manipulation;
+  background-color: #C2B8B3;
+}
+
+.main-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  background-color: #F8EECA;
+  overflow: hidden;
+}
+
+.user-name {
+  font-family: 'Perpetua Titling MT', serif;
+  text-align: center;
+}
+
+.wedding-names {
+  max-width: 100%;
+  height: auto;
+}
+
+.countdown {
+  margin-bottom: 4vh;
+  background-color: #F8EECA;
+  box-shadow:
+    0 8px 24px rgba(0, 0, 0, 0.55),
+    inset 0 0 0 1px rgba(255, 255, 255, 0.04);
+  border-radius: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  text-align: center;
+}
+
+.countdown-title {
+  font-family: 'Piazzolla', serif;
+  margin-bottom: 1vh;
+}
+
+.countdown-row {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+}
+
+.countdown-unit {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.flip-card {
+  position: relative;
+  width: var(--card-width);
+  height: var(--card-height);
+  margin-bottom: 0.8vh;
+  perspective: 400px;
+  font-family: 'Oswald', 'Piazzolla', sans-serif;
+  font-weight: 500;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+}
+
+.card-half {
+  position: absolute;
+  left: 0;
+  width: 100%;
+  height: 50%;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  background-color: rgba(134, 134, 134, 0.308);
+  color: #F8EECA;
+  backface-visibility: hidden;
+
+  span {
+    display: block;
+    height: var(--card-height);
+    line-height: var(--card-height);
+    -webkit-text-stroke: 1.5px #3a38365b;
+    paint-order: stroke fill;
+  }
+}
+
+.card-half.top {
+  top: 0;
+  border-radius: 8px 8px 0 0;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.25);
+  transform-origin: bottom;
+}
+
+.card-half.bottom {
+  bottom: 0;
+  border-radius: 0 0 8px 8px;
+  transform-origin: top;
+
+  span {
+    margin-top: calc(var(--card-height) / -2);
+  }
+}
+
+.flip-down {
+  z-index: 2;
+  animation: flipDown 0.35s ease-in forwards;
+}
+
+.flip-up {
+  z-index: 2;
+  transform: rotateX(90deg);
+  animation: flipUp 0.35s 0.35s ease-out forwards;
+}
+
+@keyframes flipDown {
+  from {
+    transform: rotateX(0deg);
+  }
+  to {
+    transform: rotateX(-90deg);
+  }
+}
+
+@keyframes flipUp {
+  from {
+    transform: rotateX(90deg);
+  }
+  to {
+    transform: rotateX(0deg);
+  }
+}
+
+.countdown-label {
+  font-family: 'Piazzolla', serif;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.btn-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.btn-bg {
+  font-family: 'Piazzolla', serif;
+  border: solid 2px black;
+  background-color: #E8C6A8;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.fade-in {
+  animation: fadeIn 1.5s ease-in forwards;
+}

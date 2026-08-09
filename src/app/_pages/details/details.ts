@@ -19,7 +19,8 @@ export class Details implements OnInit {
   }
   
   navigate(): void {
-    this.router.navigate(['../'], { relativeTo: this.route });
+    const id = this.route.snapshot.params['id'];
+    this.router.navigate([`/main/${id}`]);
   }
 
   toggleDisplay(): void {

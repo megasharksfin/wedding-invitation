@@ -1,0 +1,52 @@
+<div class="page-container">
+  <div class="main-container">
+    <div class="navigation-buttons fade-in">
+      <button class="icon-btn" type="button" (click)="back()">
+        <img src="https://res.cloudinary.com/dlk5shsgs/image/upload/v1774875649/left-arrow-standard_gcferr.png" alt="back" />
+      </button>
+    </div>
+
+    <div class="chart-scroll fade-in">
+      <div class="chart">
+        <header class="chart-header">
+          <h1>Seating Guide</h1>
+          <p>Gelo &amp; Celine &nbsp;|&nbsp; September 21, 2026</p>
+        </header>
+
+        <div class="zones">
+          @for (zone of [terrace, annex]; track zone.label) {
+            <section class="zone" [class.annex]="zone === annex">
+              <div class="columns">
+                @for (column of zone.columns; track $index) {
+                  @if (column.kind === 'seats') {
+                    <div class="seat-column">
+                      @for (seat of column.seats; track $index) {
+                        <div class="seat" [class.empty]="seat === null" [class.mine]="isMine(seat)">
+                          {{ seat }}
+                        </div>
+                      }
+                    </div>
+                  } @else {
+                    <div class="table-column">
+                      @for (table of column.tables; track table) {
+                        <div class="table-half">
+                          <span class="table-label">
+                            <span class="table-word">Table</span>
+                            <span class="table-name">{{ table }}</span>
+                          </span>
+                        </div>
+                      }
+                    </div>
+                  }
+                }
+              </div>
+
+              <div class="zone-bracket"></div>
+              <span class="zone-label">{{ zone.label }}</span>
+            </section>
+          }
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,42 @@
+<div class="page-container">
+  <div class="main-container">
+
+    <img
+      class="wedding-names fade-in"
+      src="https://res.cloudinary.com/dlk5shsgs/image/upload/v1786293165/wedding-logo-new-transparent-2_cqq2qy.png"
+      alt="Celine & Gelo" />
+
+    <div class="countdown fade-in">
+      <div class="countdown-title">Countdown to forever:</div>
+
+      <div class="countdown-row">
+        @for (unit of units(); track unit.label) {
+          <div class="countdown-unit">
+            <div class="flip-card">
+              <div class="card-half top"><span>{{ unit.current }}</span></div>
+              <div class="card-half bottom"><span>{{ unit.previous }}</span></div>
+
+              @for (key of [unit.current]; track key) {
+                <div class="card-half top flip-down"><span>{{ unit.previous }}</span></div>
+                <div class="card-half bottom flip-up"><span>{{ unit.current }}</span></div>
+              }
+            </div>
+            <span class="countdown-label">{{ unit.label }}</span>
+          </div>
+        }
+      </div>
+    </div>
+
+    <div class="btn-container fade-in">
+      <button class="btn-bg" type="button" (click)="navigate('seat-finder')">
+        <span>Seat Finder</span>
+      </button>
+      <button class="btn-bg" type="button" (click)="navigate('details')">
+        <span>Details</span>
+      </button>
+      <button class="btn-bg" type="button" (click)="navigate('faqs')">
+        <span>FAQs</span>
+      </button>
+    </div>
+  </div>
+</div>
