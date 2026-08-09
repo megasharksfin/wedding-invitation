@@ -38,7 +38,7 @@ export class Faqs {
     },
     {
       question: '7. What time should I arrive?',
-      answer: 'Call-time for entourage is 1:00pm.<br />Call time for guests is 1:30pm.<br />We recommend arriving 15-30 minutes before the call-time.'
+      answer: 'Call-time for entourage is 1:00pm.<br />Call-time for guests is 1:30pm.<br />We recommend arriving 15-30 minutes before the call-time.'
     },
     {
       question: '8. Am I allowed to take photos at your wedding?',

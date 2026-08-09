@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Petit+Formal+Script&display=swap');
+﻿@import url('https://fonts.googleapis.com/css2?family=Petit+Formal+Script&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Piazzolla&display=swap');
 
 $brown: #93441A;
@@ -25,25 +25,25 @@ $brown-soft: #B0642F;
 
 @media (min-width: 968px) {
   .main-container {
-    height: 90vh;
-    width: 90vw;
+    height: 90dvh;
+    width: 90dvw;
     box-shadow:
       0 8px 24px rgba(0, 0, 0, 0.55),
       inset 0 0 0 1px rgba(255, 255, 255, 0.04);
   }
 
   .navigation-buttons {
-    top: 6vh;
-    left: 5.5vw;
+    top: 6dvh;
+    left: 5.5dvw;
   }
 
   .chart {
-    font-size: min(20px, 1.85vw);
+    font-size: min(20px, 1.85dvw);
   }
 
   .chart-header {
     align-self: center;
-    width: 30vw;
+    width: 30dvw;
 
     > h1 {
       font-size: 3em;
@@ -74,7 +74,7 @@ $brown-soft: #B0642F;
   justify-content: center;
   align-items: center;
   height: 100%;
-  min-height: 100vh;
+  min-height: 100dvh;
   position: relative;
   font-family: 'Piazzolla', serif;
   touch-action: manipulation;
@@ -117,7 +117,7 @@ $brown-soft: #B0642F;
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 4vh 2vw;
+  padding: 4dvh 2dvw;
   box-sizing: border-box;
 }
 
@@ -273,7 +273,7 @@ $brown-soft: #B0642F;
   .chart {
     width: 29em;
     margin: auto;
-    font-size: #{'min(20px, (100vw - 30px) / 29, (100dvh - 30px) / 56)'};
+    font-size: #{'min(20px, (100dvw - 30px) / 29, (100dvh - 30px) / 56)'};
   }
 
   .chart-scroll {
