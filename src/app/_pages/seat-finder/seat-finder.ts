@@ -43,9 +43,9 @@ export class SeatFinder {
       { kind: 'seats', seats: [null, 13, 11, 52, 2, 1, 39, 14, 44, 7] },
       { kind: 'table', tables: ['Baguio', 'Antipolo'] },
       { kind: 'seats', seats: [4, 8, 9, 6, 5, 42, 41, 26, 50, 47] },
-      { kind: 'seats', seats: [23, 24, 20, 18, 28, 27, 3, 37, 38, 49] },
+      { kind: 'seats', seats: [16, 23, 24, 20, 28, 27, 3, 37, 38, 49] },
       { kind: 'table', tables: ['Bicol', 'Bukidnon'] },
-      { kind: 'seats', seats: [19, 17, 16, 21, 25, 43, 45, 40, 36, 35] },
+      { kind: 'seats', seats: [21, 25, 17, 19, 18, 43, 45, 40, 36, 35] },
     ],
   };
 
